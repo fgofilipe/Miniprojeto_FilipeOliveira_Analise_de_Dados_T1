@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# ==============================
 # SPRINT 1: IMPORTAÇÃO DOS DADOS
 
 print("=" * 50)
@@ -22,7 +23,7 @@ print("\n--- Informações Gerais da Base (Leitura via DictReader concluída) --
 print(f"Número de Linhas (Registros) Inicial: {df.shape[0]}")
 print(f"Número de Colunas Inicial: {df.shape[1]}")
 
-
+# =====================================
 # SPRINT 2 e 3: LIMPEZA E TRANSFORMAÇÃO
 
 print("\n" + "=" * 50)
@@ -70,7 +71,7 @@ print(f"Novo número total de linhas: {df.shape[0]}")
 print(f"Valores nulos restantes na coluna DATA: {df['DATA'].isnull().sum()}")
 print(f"Quantidade atual de linhas duplicadas: {df.duplicated().sum()}")
 
-
+# ================================
 # SPRINT 4: ESTATÍSTICA DESCRITIVA
 
 
@@ -100,7 +101,7 @@ print(f"Máximo de filhos: {maximo_filhos}")
 print(f"1º Quartil (25%): {q1}")
 print(f"3º Quartil (75%): {q3}")
 
-
+# ======================
 # SPRINT 5: AGRUPAMENTOS
 
 
@@ -124,7 +125,7 @@ compras_por_mes = df.groupby(df['DATA'].dt.month).size()
 print(compras_por_mes)
 
 
-
+# ====================
 # VISUALIZAÇÃO GRÁFICA
 
 print("\n" + "=" * 50)
@@ -139,7 +140,7 @@ plt.tight_layout()
 print("-> Gráfico gerado com sucesso! Feche a janela do gráfico para exibir o relatório final.")
 plt.show()
 
-
+# ===========================
 # RELATÓRIO FINAL DE INSIGHTS
 
 
@@ -153,4 +154,16 @@ print(f"3. Foram identificadas e tratadas {datas_invalidas} inconsistências de 
 print(f"4. A maioria dos clientes ativos mapeados não possui filhos (Moda = {moda_filhos}).")
 print("5. O setor de ALIMENTOS é o líder disparado no volume de vendas, seguido por higiene e limpeza.")
 print("6. Os cruzamentos de dados validaram o perfil demográfico feminino como majoritário nas decisões de compras na rede.")
+print("=" * 50)
+
+# ===========================================
+# EXIGÊNCIA SPRINT 6: EXPORTANDO A BASE LIMPA
+
+print("\n" + "=" * 50)
+print("EXPORTANDO BASE DE DADOS LIMPA")
+print("=" * 50)
+
+# Salvando o DataFrame limpo em um novo arquivo CSV na pasta Dados
+df.to_csv('Dados/Varejo_Limpo.csv', sep=';', index=False, encoding='utf-8')
+print("-> Arquivo 'Varejo_Limpo.csv' gerado e salvo na pasta Dados com sucesso!")
 print("=" * 50)
