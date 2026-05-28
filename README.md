@@ -170,7 +170,7 @@ A visualização auxilia na interpretação rápida dos padrões comerciais enco
 
 ---
 
-# 🔄 Versionamento
+# Versionamento
 
 O projeto foi versionado utilizando Git e hospedado no GitHub para controle de alterações, organização do desenvolvimento e rastreabilidade das modificações realizadas.
 
